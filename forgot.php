@@ -2,7 +2,6 @@
 <?php  include "includes/header.php"; ?>
 
 
-
 <?php
 
 require './vendor/autoload.php';
@@ -12,7 +11,6 @@ require './vendor/autoload.php';
         redirect('index');
 
     }
-
 
     if(ifItIsMethod('post')){
 
@@ -56,59 +54,26 @@ require './vendor/autoload.php';
                     $mail->CharSet = 'UTF-8';
 
 
-                    $mail->setFrom('edwin@codingfaculty.com', 'Edwin Diaz');
+                    $mail->setFrom('ahsan5304@gmail.com', 'Ahsan Rifat');
                     $mail->addAddress($email);
 
                     $mail->Subject = 'This is a test email';
 
                     $mail->Body = '<p>Please click to reset your password
 
-                    <a href="http://localhost:8888/cms/reset.php?email='.$email.'&token='.$token.' ">http://localhost:888/cms/reset.php?email='.$email.'&token='.$token.'</a>
-
-
-
+                    <a href="http://localhost:8012/cms/reset.php?email='.$email.'&token='.$token.' ">http://localhost:8012/cms/reset.php?email='.$email.'&token='.$token.'</a>
+                    
                     </p>';
-
-
                     if($mail->send()){
-
                         $emailSent = true;
-
                     } else{
-
                         echo "NOT SENT";
-
                     }
-
-
-
-
-
                 }
-
-
-
-
             }
-
-
-
-
         }
-
-
      }
-
-
-
-
-
 ?>
-
-
-
-
-
 
 <!-- Page Content -->
 <div class="container">
@@ -121,9 +86,7 @@ require './vendor/autoload.php';
                     <div class="panel-body">
                         <div class="text-center">
 
-
                         <?php if(!isset( $emailSent)): ?>
-
 
                                 <h3><i class="fa fa-lock fa-4x"></i></h3>
                                 <h2 class="text-center">Forgot Password?</h2>
@@ -151,13 +114,8 @@ require './vendor/autoload.php';
                                 </div><!-- Body-->
 
                             <?php else: ?>
-
-
                                 <h2>Please check your email</h2>
-
-
                             <?php endIf; ?>
-
 
                         </div>
                     </div>
@@ -165,11 +123,8 @@ require './vendor/autoload.php';
             </div>
         </div>
     </div>
-
-
     <hr>
 
     <?php include "includes/footer.php";?>
 
 </div> <!-- /.container -->
-
